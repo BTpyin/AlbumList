@@ -5,12 +5,7 @@
 ## User settings
 xcuserdata/
 
-## compatibility with Xcode 8 and earlier (ignoring not required starting Xcode$
 *.xcscmblueprint
-*.xccheckout
-*.generated.swift
-
-## compatibility with Xcode 3 and earlier (ignoring not required starting Xcode$
 build/
 DerivedData/
 *.moved-aside
