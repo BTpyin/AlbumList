@@ -31,4 +31,10 @@ class AlbumListTabBarController: UITabBarController, UITabBarControllerDelegate 
         print("Selected Item :", item)
     }
     
+    func tabBarController(_ tabBarController: UITabBarController,
+                          shouldSelect viewController: UIViewController) -> Bool {
+        print("tabBarController_vc :", viewController)
+        return true
+    }
+    
 }
