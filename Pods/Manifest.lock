@@ -7,6 +7,9 @@ PODS:
     - Moya/Core (= 15.0.0)
   - Moya/Core (15.0.0):
     - Alamofire (~> 5.0)
+  - Moya/RxSwift (15.0.0):
+    - Moya/Core
+    - RxSwift (~> 6.0)
   - R.swift (5.2.2):
     - R.swift.Library (~> 5.2.0)
   - R.swift.Library (5.2.0)
@@ -44,9 +47,9 @@ PODS:
   - SwifterSwift/UIKit (5.2.0)
 
 DEPENDENCIES:
-  - Alamofire
   - Kingfisher (= 5.9.0)
   - Moya
+  - Moya/RxSwift
   - R.swift (= 5.2.2)
   - RxCocoa (~> 6)
   - RxSwift (~> 6)
@@ -78,6 +81,6 @@ SPEC CHECKSUMS:
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SwifterSwift: 334181863c416882d97b7a60c05054d9e4d799e2
 
-PODFILE CHECKSUM: be7ef5b7492184925a0ea216021ed2ae4fc915f5
+PODFILE CHECKSUM: 1dea9a8ac8521001066536c296dc13af15f08e8b
 
 COCOAPODS: 1.11.3

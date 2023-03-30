@@ -8,6 +8,8 @@
 import UIKit
 
 class AlbumCollectionViewCell: UICollectionViewCell {
+    
+    static let cellID = "AlbumCollectionViewCell"
 
     override func awakeFromNib() {
         super.awakeFromNib()

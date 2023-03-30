@@ -12,7 +12,7 @@ target 'AlbumList' do
 	pod 'Kingfisher', '5.9.0'
 	pod 'SwifterSwift'
 	pod 'SnapKit'
-	pod 'Alamofire'
 	pod 'Moya'
+	pod 'Moya/RxSwift'
 
 end
