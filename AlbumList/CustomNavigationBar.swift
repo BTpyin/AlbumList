@@ -23,11 +23,11 @@ extension UIViewController {
         if let navigationController = navigationController {
             navigationController.navigationBar.isTranslucent = true
             navigationController.navigationBar.tintColor = .white
-            
+
             navigationController.isNavigationBarHidden = false
             navigationController.navigationBar.barTintColor = .white
             navigationController.navigationBar.isTranslucent = false
-            
+
             navigationController.navigationBar.shadowColor = .black
             navigationController.navigationBar.shadowOffset = CGSize(width: 0, height: 0.5)
             navigationController.navigationBar.shadowOpacity = 0.2
@@ -54,7 +54,7 @@ extension UIViewController {
                 navigationItem.rightBarButtonItems = []
                 setNavigationBar(title: title)
             case .backWithTitle(let title):
-//                navigationItem.leftBarButtonItems = [backBarButton]
+                navigationItem.leftBarButtonItems = [backBarButton]
                 navigationItem.rightBarButtonItems = []
                 setNavigationBar(title: title)
             default:

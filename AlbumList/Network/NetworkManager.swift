@@ -22,7 +22,7 @@ struct NetworkManager {
 }
 
 extension NetworkManager {
-    static func requestRestfulAPI<T: Codable>(target: API, retryTimes: Int = 1, type: T.Type) -> Observable<String>{
+    static func requestAPI<T: Codable>(target: API, retryTimes: Int = 1, type: T.Type) -> Observable<String>{
         return NetworkManager.requestBy(target: target, retryTimes: retryTimes, type: type)
     }
     

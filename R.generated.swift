@@ -284,17 +284,25 @@ struct _R: Rswift.Validatable {
     struct home: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
       typealias InitialController = UIKit.UINavigationController
 
+      let albumDetailViewController = StoryboardViewControllerResource<AlbumDetailViewController>(identifier: "AlbumDetailViewController")
       let bundle = R.hostingBundle
       let homeViewController = StoryboardViewControllerResource<HomeViewController>(identifier: "HomeViewController")
       let name = "Home"
+
+      func albumDetailViewController(_: Void = ()) -> AlbumDetailViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: albumDetailViewController)
+      }
 
       func homeViewController(_: Void = ()) -> HomeViewController? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: homeViewController)
       }
 
       static func validate() throws {
+        if UIKit.UIImage(named: "clear.fill", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'clear.fill' is used in storyboard 'Home', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "magnifyingglass.circle.fill", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'magnifyingglass.circle.fill' is used in storyboard 'Home', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
+        if _R.storyboard.home().albumDetailViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'albumDetailViewController' could not be loaded from storyboard 'Home' as 'AlbumDetailViewController'.") }
         if _R.storyboard.home().homeViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'homeViewController' could not be loaded from storyboard 'Home' as 'HomeViewController'.") }
       }
 

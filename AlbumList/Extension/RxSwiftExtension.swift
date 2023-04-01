@@ -9,6 +9,7 @@ import Foundation
 import Moya
 import RxCocoa
 import RxSwift
+import Kingfisher
 
 extension ObservableType where Element == String {
     
@@ -41,14 +42,14 @@ extension ObservableType where Element == String {
                     let error = NSError(domain: "API General Error",
                                         code: 20000,    //dummy error code
                                         userInfo: nil)
-        
+                    
                     return Observable.deferred({
                         print("GeneralAPIError :", error)
                         throw error
                     }).catch({ error -> Observable<String> in
                         return Observable.error(error)
                     })
-                    
+                                
                 }
             } else {
                 print("this is API error")
@@ -75,7 +76,7 @@ extension ObservableType where Element == String {
             }
             return Observable.error(error)
         })
-        .retry { (rxError: Observable<Error>) -> Observable<Int> in
+            .retry { (rxError: Observable<Error>) -> Observable<Int> in
             return rxError.enumerated().flatMap { (index, error) -> Observable<Int> in
                 guard index < retryTimes else {
                     return Observable.error(error)
@@ -83,5 +84,31 @@ extension ObservableType where Element == String {
                 return Observable<Int>.timer(.milliseconds(300), scheduler: MainScheduler.asyncInstance)
             }
         }
+    }
+}
+
+extension Reactive where Base: UIImageView {
+    public var imageURL: Binder<String> {
+        return Binder(base, binding: { (imageView, urlString) in
+            guard !urlString.isEmpty else { return }
+            do {
+                let url = try urlString.asURL()
+                imageView.kf.setImage(
+                    with: url,
+                    placeholder: UIImage(color: .white, size: imageView.size),
+                    options: [.cacheOriginalImage], completionHandler:  { result in
+                        switch result {
+                        case .success(let value):
+                            let image = value.image
+                            imageView.image = image
+                        case .failure(let error):
+                            print("Job failed: \(error.localizedDescription)")
+                        }
+                    })
+            } catch {
+                print(error.localizedDescription)
+                
+            }
+        })
     }
 }
