@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import SwiftyUserDefaults
 
 class HomeViewController: BaseViewController {
 
@@ -92,8 +93,9 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.albumCollectionViewCell, for: indexPath) as! AlbumCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.albumCollectionViewCell, for: indexPath)!
         cell.setup(viewModel: AlbumCollectionViewCellViewModel(model: viewModel.albumList.value[indexPath.row]))
+        cell.delegate = self
         return cell
     }
     
@@ -101,8 +103,36 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let model = viewModel.albumList.value[indexPath.row]
         let vc = R.storyboard.home.albumDetailViewController()!
         vc.viewModel.setupVm(model: model)
+        vc.delegate = self
         navigationController?.pushViewController(vc, animated: true)
     }
     
     
+}
+
+extension HomeViewController: AlbumCollectionViewCellDelegate {
+    
+    func didFavouriteViewTapped(collectionId: Int) {
+        if FavouriteHelper.getFavouriteAlbum(by: collectionId) != nil{
+            FavouriteHelper.removeFavouriteAlbum(by: collectionId)
+        } else {
+            if let selectedAlbum = viewModel.albumList.value.filter({$0.collectionID == collectionId}).first {
+                FavouriteHelper.setOrAddNewFavouriteAlbum(album: selectedAlbum)
+            }
+        }
+    }
+}
+
+extension HomeViewController: AlbumDetailViewControllerDeletgate {
+    
+    func didDetailPageIsFavouriteTapped(collectionId: Int) {
+        if FavouriteHelper.getFavouriteAlbum(by: collectionId) != nil{
+            FavouriteHelper.removeFavouriteAlbum(by: collectionId)
+        } else {
+            if let selectedAlbum = viewModel.albumList.value.filter({$0.collectionID == collectionId}).first {
+                FavouriteHelper.setOrAddNewFavouriteAlbum(album: selectedAlbum)
+            }
+        }
+        albumListCollectionView.reloadData()
+    }
 }

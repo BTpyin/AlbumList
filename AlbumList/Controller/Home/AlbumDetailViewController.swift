@@ -9,6 +9,10 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+protocol AlbumDetailViewControllerDeletgate: AnyObject {
+    func didDetailPageIsFavouriteTapped(collectionId: Int)
+}
+
 class AlbumDetailViewController: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
@@ -17,7 +21,9 @@ class AlbumDetailViewController: UIViewController {
     @IBOutlet weak var artistNameLabel: UILabel!
     @IBOutlet weak var albumNameLabel: UILabel!
     
+    @IBOutlet weak var isFavouriteImageView: UIImageView!
     @IBOutlet weak var seperatorView: UIView!
+    @IBOutlet weak var albumImageBackgroundView: UIView!
     @IBOutlet weak var albumImageView: UIImageView!
     
     @IBOutlet weak var releaseDateLabel: UILabel!
@@ -34,12 +40,28 @@ class AlbumDetailViewController: UIViewController {
     @IBOutlet weak var showArtistTextLabel: UILabel!
     
     let viewModel = AlbumDetailViewControllerViewModel()
+    
+    weak var delegate: AlbumDetailViewControllerDeletgate?
+    
     let disposeBag = DisposeBag()
+    
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        isFavouriteImageView.dropShadow(color: .black, opacity: 0.1, offSet: .zero, radius: 2)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
         setupBinding()
         // Do any additional setup after loading the view.
+    }
+    
+    func setupView() {
+        isFavouriteImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didIsFavouriteTapped)))
+        isFavouriteImageView.isUserInteractionEnabled = true
+        
     }
     
     func setupBinding() {
@@ -58,7 +80,22 @@ class AlbumDetailViewController: UIViewController {
         viewModel.copyrightText.bind(to: copyrightLabel.rx.text).disposed(by: disposeBag)
         viewModel.price.bind(to: priceLabel.rx.text).disposed(by: disposeBag)
         
+        viewModel.isFavourite.bind { [weak self] (isFavourite) in
+            guard let self = self else {return}
+            if isFavourite {
+                self.isFavouriteImageView.tintColor = .red
+                self.isFavouriteImageView.image = UIImage(systemName: "heart.fill")
+            } else {
+                self.isFavouriteImageView.tintColor = .gray
+                self.isFavouriteImageView.image = UIImage(systemName: "heart")
+            }
+        }.disposed(by: disposeBag)
         
+    }
+    
+    @objc func didIsFavouriteTapped() {
+        viewModel.isFavourite.accept(!(viewModel.isFavourite.value))
+        delegate?.didDetailPageIsFavouriteTapped(collectionId: viewModel.collectionId.value)
     }
     
     @IBAction func didShowAlbumTapped(_ sender: Any) {

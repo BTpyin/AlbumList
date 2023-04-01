@@ -11,6 +11,7 @@ target 'AlbumList' do
 	pod 'R.swift', '5.2.2'
 	pod 'Kingfisher', '5.9.0'
 	pod 'SwifterSwift'
+	pod 'SwiftyUserDefaults'
 	pod 'SnapKit'
 	pod 'Moya'
 	pod 'Moya/RxSwift'

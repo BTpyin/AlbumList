@@ -37,7 +37,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Collection Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="76p-KB-7yn">
-                                        <rect key="frame" x="4" y="156" width="142" height="32"/>
+                                        <rect key="frame" x="4" y="156" width="142" height="49.666666666666657"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -48,12 +48,21 @@
                                         <color key="textColor" systemColor="systemGrayColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TNb-cG-sK5">
-                                        <rect key="frame" x="4" y="196" width="142" height="14.333333333333343"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TNb-cG-sK5">
+                                        <rect key="frame" x="4" y="213.66666666666666" width="142" height="14.333333333333343"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="cHv-wt-aHI">
+                                        <rect key="frame" x="114" y="14" width="24" height="21"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="cHv-wt-aHI" secondAttribute="height" multiplier="1:1" id="ULI-fE-XNQ"/>
+                                            <constraint firstAttribute="width" constant="24" id="w2u-W2-nvF"/>
+                                            <constraint firstAttribute="height" constant="24" id="x2A-fL-dez"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -62,6 +71,8 @@
                                     <constraint firstItem="TNb-cG-sK5" firstAttribute="leading" secondItem="JgS-d8-MlP" secondAttribute="leading" constant="4" id="9o9-4r-NKx"/>
                                     <constraint firstAttribute="trailing" secondItem="aaB-0m-kYi" secondAttribute="trailing" constant="2" id="Axh-eJ-FsP"/>
                                     <constraint firstItem="Zf1-13-GZG" firstAttribute="centerX" secondItem="JgS-d8-MlP" secondAttribute="centerX" id="Gne-YA-cEU"/>
+                                    <constraint firstAttribute="trailing" secondItem="cHv-wt-aHI" secondAttribute="trailing" constant="12" id="NtG-4P-9Pu"/>
+                                    <constraint firstItem="cHv-wt-aHI" firstAttribute="top" secondItem="JgS-d8-MlP" secondAttribute="top" constant="12" id="PGE-CO-h19"/>
                                     <constraint firstAttribute="bottom" secondItem="aaB-0m-kYi" secondAttribute="bottom" constant="8" id="YTf-7b-tCO"/>
                                     <constraint firstAttribute="trailing" secondItem="TNb-cG-sK5" secondAttribute="trailing" constant="4" id="ZLL-kC-562"/>
                                     <constraint firstAttribute="trailing" secondItem="Zf1-13-GZG" secondAttribute="trailing" id="cXB-W9-Ard"/>
@@ -70,6 +81,7 @@
                                     <constraint firstItem="76p-KB-7yn" firstAttribute="top" secondItem="Zf1-13-GZG" secondAttribute="bottom" constant="6" id="ijX-ut-Hl6"/>
                                     <constraint firstItem="TNb-cG-sK5" firstAttribute="top" secondItem="76p-KB-7yn" secondAttribute="bottom" constant="8" id="pbA-M6-K8b"/>
                                     <constraint firstItem="aaB-0m-kYi" firstAttribute="leading" secondItem="JgS-d8-MlP" secondAttribute="leading" constant="20" id="q1l-V7-PVg"/>
+                                    <constraint firstAttribute="bottom" secondItem="TNb-cG-sK5" secondAttribute="bottom" constant="8" id="sbb-AR-Cp3"/>
                                     <constraint firstItem="aaB-0m-kYi" firstAttribute="top" secondItem="TNb-cG-sK5" secondAttribute="bottom" constant="8" id="xgu-jY-kYK"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -77,6 +89,11 @@
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="aaB-0m-kYi"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -104,11 +121,13 @@
                 <outlet property="collectionLabel" destination="76p-KB-7yn" id="WNU-yc-EOI"/>
                 <outlet property="containerView" destination="JgS-d8-MlP" id="xaq-sl-rqj"/>
                 <outlet property="copyrightLabel" destination="aaB-0m-kYi" id="qIv-Mu-Ng4"/>
+                <outlet property="isFavouriteImageView" destination="cHv-wt-aHI" id="e9G-k6-gag"/>
             </connections>
             <point key="canvasLocation" x="96.153846153846146" y="86.729857819905206"/>
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="heart" catalog="system" width="128" height="107"/>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

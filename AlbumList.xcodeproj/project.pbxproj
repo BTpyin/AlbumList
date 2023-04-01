@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0E9FA83A29D6FAC6002F2D78 /* AlbumDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9FA83929D6FAC6002F2D78 /* AlbumDetailViewController.swift */; };
 		0E9FA83C29D6FAEA002F2D78 /* AlbumDetailViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9FA83B29D6FAEA002F2D78 /* AlbumDetailViewControllerViewModel.swift */; };
+		0E9FA83E29D83AFE002F2D78 /* DefaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9FA83D29D83AFE002F2D78 /* DefaultKeys.swift */; };
+		0E9FA84029D86D14002F2D78 /* FavouriteHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9FA83F29D86D14002F2D78 /* FavouriteHelper.swift */; };
 		0EB09D5729D30D4700FC21BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB09D5629D30D4700FC21BB /* AppDelegate.swift */; };
 		0EB09D5929D30D4700FC21BB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB09D5829D30D4700FC21BB /* SceneDelegate.swift */; };
 		0EB09D5B29D30D4700FC21BB /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB09D5A29D30D4700FC21BB /* BaseViewController.swift */; };
@@ -42,6 +44,8 @@
 		0C9D8AB33ECDDAA35AEA5C81 /* Pods_AlbumList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlbumList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E9FA83929D6FAC6002F2D78 /* AlbumDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailViewController.swift; sourceTree = "<group>"; };
 		0E9FA83B29D6FAEA002F2D78 /* AlbumDetailViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailViewControllerViewModel.swift; sourceTree = "<group>"; };
+		0E9FA83D29D83AFE002F2D78 /* DefaultKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultKeys.swift; sourceTree = "<group>"; };
+		0E9FA83F29D86D14002F2D78 /* FavouriteHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteHelper.swift; sourceTree = "<group>"; };
 		0EB09D5329D30D4700FC21BB /* AlbumList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlbumList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EB09D5629D30D4700FC21BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0EB09D5829D30D4700FC21BB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +119,7 @@
 				0EC9427929D335A000B35ABD /* Network */,
 				0EC9427829D3340500B35ABD /* Resources */,
 				0EC9427E29D3538D00B35ABD /* CustomNavigationBar.swift */,
+				0E9FA83F29D86D14002F2D78 /* FavouriteHelper.swift */,
 				0EC9429929D565F300B35ABD /* Constant.swift */,
 				0EC9429229D5637C00B35ABD /* Extension */,
 			);
@@ -200,6 +205,7 @@
 				0EC9429329D5639800B35ABD /* EncodeExtension.swift */,
 				0EC9429D29D574EB00B35ABD /* RxSwiftExtension.swift */,
 				0EC942A829D6C6F400B35ABD /* UIViewExtension.swift */,
+				0E9FA83D29D83AFE002F2D78 /* DefaultKeys.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -380,10 +386,12 @@
 				0EC942A929D6C6F400B35ABD /* UIViewExtension.swift in Sources */,
 				0E9FA83A29D6FAC6002F2D78 /* AlbumDetailViewController.swift in Sources */,
 				0EC9428729D40DE400B35ABD /* SettingViewController.swift in Sources */,
+				0E9FA84029D86D14002F2D78 /* FavouriteHelper.swift in Sources */,
 				0EC9429A29D565F300B35ABD /* Constant.swift in Sources */,
 				0EB09D5729D30D4700FC21BB /* AppDelegate.swift in Sources */,
 				0EC9429829D5654A00B35ABD /* API.swift in Sources */,
 				0E9FA83C29D6FAEA002F2D78 /* AlbumDetailViewControllerViewModel.swift in Sources */,
+				0E9FA83E29D83AFE002F2D78 /* DefaultKeys.swift in Sources */,
 				0EB09D5929D30D4700FC21BB /* SceneDelegate.swift in Sources */,
 				0EC9428529D40DCF00B35ABD /* HomeViewController.swift in Sources */,
 				0EC9429129D5626400B35ABD /* DefaultAlamofireManager.swift in Sources */,

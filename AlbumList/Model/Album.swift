@@ -6,10 +6,11 @@
 //
 
 import Foundation
+import SwiftyUserDefaults
 
 typealias AlbumList = [Album]
 
-struct Album: Codable {
+struct Album: Codable, DefaultsSerializable {
     let wrapperType: String?
     let collectionType: String?
     let artistID, collectionID, amgArtistID: Int?
