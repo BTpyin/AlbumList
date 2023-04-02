@@ -1,0 +1,30 @@
+/* 
+  Localizable.strings
+  AlbumList
+
+  Created by Bowie Tso on 2/4/2023.
+  
+*/
+//MARK: Bottom Tab Bar
+"bottom_tab_bar_home" = "主頁";
+"bottom_tab_bar_setting" = "設定";
+
+"cancel" = "取消";
+
+//MARK: Album Detail Page
+
+"album_detail_released_on" = "發表日期";
+"album_detail_primary_genre" = "音樂類型";
+"album_detail_no_of_tracks" = "收錄曲數目";
+"album_detail_country" = "國家";
+"album_detail_price" = "價錢";
+"album_detail_show_album_on_apple_music" = "喺Apple Music瀏覧專輯";
+"album_detail_show_artist_on_apple_music" = "喺Apple Music瀏覧藝人";
+
+//MARK: Favourite Album
+"favourite_album_title" = "最愛專輯";
+"favourite_album_title_remove" = "移除專輯";
+
+//MARK: Setting
+"setting_language" = "語言";
+"setting_choose_language" = "選擇語言";

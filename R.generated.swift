@@ -287,6 +287,332 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
+  /// This `R.string` struct is generated, and contains static references to 3 localization tables.
+  struct string {
+    /// This `R.string.launchScreen` struct is generated, and contains static references to 0 localization keys.
+    struct launchScreen {
+      fileprivate init() {}
+    }
+
+    /// This `R.string.localizable` struct is generated, and contains static references to 14 localization keys.
+    struct localizable {
+      /// en translation: Cancel
+      ///
+      /// Locales: zh-HK, zh-Hant, en
+      static let cancel = Rswift.StringResource(key: "cancel", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-HK", "zh-Hant", "en"], comment: nil)
+      /// en translation: Choose Language
+      ///
+      /// Locales: zh-HK, zh-Hant, en
+      static let setting_choose_language = Rswift.StringResource(key: "setting_choose_language", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-HK", "zh-Hant", "en"], comment: nil)
+      /// en translation: Country
+      ///
+      /// Locales: zh-HK, zh-Hant, en
+      static let album_detail_country = Rswift.StringResource(key: "album_detail_country", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-HK", "zh-Hant", "en"], comment: nil)
+      /// en translation: Favourite Album
+      ///
+      /// Locales: zh-HK, zh-Hant, en
+      static let favourite_album_title = Rswift.StringResource(key: "favourite_album_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-HK", "zh-Hant", "en"], comment: nil)
+      /// en translation: Home
+      ///
+      /// Locales: zh-HK, zh-Hant, en
+      static let bottom_tab_bar_home = Rswift.StringResource(key: "bottom_tab_bar_home", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-HK", "zh-Hant", "en"], comment: nil)
+      /// en translation: Language
+      ///
+      /// Locales: zh-HK, zh-Hant, en
+      static let setting_language = Rswift.StringResource(key: "setting_language", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-HK", "zh-Hant", "en"], comment: nil)
+      /// en translation: No. Of Track
+      ///
+      /// Locales: zh-HK, zh-Hant, en
+      static let album_detail_no_of_tracks = Rswift.StringResource(key: "album_detail_no_of_tracks", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-HK", "zh-Hant", "en"], comment: nil)
+      /// en translation: Price
+      ///
+      /// Locales: zh-HK, zh-Hant, en
+      static let album_detail_price = Rswift.StringResource(key: "album_detail_price", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-HK", "zh-Hant", "en"], comment: nil)
+      /// en translation: Primary Genre
+      ///
+      /// Locales: zh-HK, zh-Hant, en
+      static let album_detail_primary_genre = Rswift.StringResource(key: "album_detail_primary_genre", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-HK", "zh-Hant", "en"], comment: nil)
+      /// en translation: Released on
+      ///
+      /// Locales: zh-HK, zh-Hant, en
+      static let album_detail_released_on = Rswift.StringResource(key: "album_detail_released_on", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-HK", "zh-Hant", "en"], comment: nil)
+      /// en translation: Remove album
+      ///
+      /// Locales: zh-HK, zh-Hant, en
+      static let favourite_album_title_remove = Rswift.StringResource(key: "favourite_album_title_remove", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-HK", "zh-Hant", "en"], comment: nil)
+      /// en translation: Setting
+      ///
+      /// Locales: zh-HK, zh-Hant, en
+      static let bottom_tab_bar_setting = Rswift.StringResource(key: "bottom_tab_bar_setting", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-HK", "zh-Hant", "en"], comment: nil)
+      /// en translation: Show Album On Apple Music
+      ///
+      /// Locales: zh-HK, zh-Hant, en
+      static let album_detail_show_album_on_apple_music = Rswift.StringResource(key: "album_detail_show_album_on_apple_music", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-HK", "zh-Hant", "en"], comment: nil)
+      /// en translation: Show Artist On Apple Music
+      ///
+      /// Locales: zh-HK, zh-Hant, en
+      static let album_detail_show_artist_on_apple_music = Rswift.StringResource(key: "album_detail_show_artist_on_apple_music", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-HK", "zh-Hant", "en"], comment: nil)
+
+      /// en translation: Cancel
+      ///
+      /// Locales: zh-HK, zh-Hant, en
+      static func cancel(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("cancel", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "cancel"
+        }
+
+        return NSLocalizedString("cancel", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Choose Language
+      ///
+      /// Locales: zh-HK, zh-Hant, en
+      static func setting_choose_language(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("setting_choose_language", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "setting_choose_language"
+        }
+
+        return NSLocalizedString("setting_choose_language", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Country
+      ///
+      /// Locales: zh-HK, zh-Hant, en
+      static func album_detail_country(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("album_detail_country", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "album_detail_country"
+        }
+
+        return NSLocalizedString("album_detail_country", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Favourite Album
+      ///
+      /// Locales: zh-HK, zh-Hant, en
+      static func favourite_album_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("favourite_album_title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "favourite_album_title"
+        }
+
+        return NSLocalizedString("favourite_album_title", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Home
+      ///
+      /// Locales: zh-HK, zh-Hant, en
+      static func bottom_tab_bar_home(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("bottom_tab_bar_home", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "bottom_tab_bar_home"
+        }
+
+        return NSLocalizedString("bottom_tab_bar_home", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Language
+      ///
+      /// Locales: zh-HK, zh-Hant, en
+      static func setting_language(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("setting_language", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "setting_language"
+        }
+
+        return NSLocalizedString("setting_language", bundle: bundle, comment: "")
+      }
+
+      /// en translation: No. Of Track
+      ///
+      /// Locales: zh-HK, zh-Hant, en
+      static func album_detail_no_of_tracks(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("album_detail_no_of_tracks", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "album_detail_no_of_tracks"
+        }
+
+        return NSLocalizedString("album_detail_no_of_tracks", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Price
+      ///
+      /// Locales: zh-HK, zh-Hant, en
+      static func album_detail_price(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("album_detail_price", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "album_detail_price"
+        }
+
+        return NSLocalizedString("album_detail_price", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Primary Genre
+      ///
+      /// Locales: zh-HK, zh-Hant, en
+      static func album_detail_primary_genre(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("album_detail_primary_genre", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "album_detail_primary_genre"
+        }
+
+        return NSLocalizedString("album_detail_primary_genre", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Released on
+      ///
+      /// Locales: zh-HK, zh-Hant, en
+      static func album_detail_released_on(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("album_detail_released_on", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "album_detail_released_on"
+        }
+
+        return NSLocalizedString("album_detail_released_on", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Remove album
+      ///
+      /// Locales: zh-HK, zh-Hant, en
+      static func favourite_album_title_remove(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("favourite_album_title_remove", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "favourite_album_title_remove"
+        }
+
+        return NSLocalizedString("favourite_album_title_remove", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Setting
+      ///
+      /// Locales: zh-HK, zh-Hant, en
+      static func bottom_tab_bar_setting(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("bottom_tab_bar_setting", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "bottom_tab_bar_setting"
+        }
+
+        return NSLocalizedString("bottom_tab_bar_setting", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Show Album On Apple Music
+      ///
+      /// Locales: zh-HK, zh-Hant, en
+      static func album_detail_show_album_on_apple_music(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("album_detail_show_album_on_apple_music", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "album_detail_show_album_on_apple_music"
+        }
+
+        return NSLocalizedString("album_detail_show_album_on_apple_music", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Show Artist On Apple Music
+      ///
+      /// Locales: zh-HK, zh-Hant, en
+      static func album_detail_show_artist_on_apple_music(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("album_detail_show_artist_on_apple_music", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "album_detail_show_artist_on_apple_music"
+        }
+
+        return NSLocalizedString("album_detail_show_artist_on_apple_music", bundle: bundle, comment: "")
+      }
+
+      fileprivate init() {}
+    }
+
+    /// This `R.string.main` struct is generated, and contains static references to 2 localization keys.
+    struct main {
+      /// zh-HK translation: Item
+      ///
+      /// Locales: zh-HK, zh-Hant
+      static let eEdMaNf9Title = Rswift.StringResource(key: "eEd-ma-Nf9.title", tableName: "Main", bundle: R.hostingBundle, locales: ["zh-HK", "zh-Hant"], comment: nil)
+      /// zh-HK translation: Item
+      ///
+      /// Locales: zh-HK, zh-Hant
+      static let m1pGgIOvTitle = Rswift.StringResource(key: "m1p-gg-IOv.title", tableName: "Main", bundle: R.hostingBundle, locales: ["zh-HK", "zh-Hant"], comment: nil)
+
+      /// zh-HK translation: Item
+      ///
+      /// Locales: zh-HK, zh-Hant
+      static func eEdMaNf9Title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("eEd-ma-Nf9.title", tableName: "Main", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Main", preferredLanguages: preferredLanguages) else {
+          return "eEd-ma-Nf9.title"
+        }
+
+        return NSLocalizedString("eEd-ma-Nf9.title", tableName: "Main", bundle: bundle, comment: "")
+      }
+
+      /// zh-HK translation: Item
+      ///
+      /// Locales: zh-HK, zh-Hant
+      static func m1pGgIOvTitle(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("m1p-gg-IOv.title", tableName: "Main", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Main", preferredLanguages: preferredLanguages) else {
+          return "m1p-gg-IOv.title"
+        }
+
+        return NSLocalizedString("m1p-gg-IOv.title", tableName: "Main", bundle: bundle, comment: "")
+      }
+
+      fileprivate init() {}
+    }
+
+    fileprivate init() {}
+  }
+
   fileprivate struct intern: Rswift.Validatable {
     fileprivate static func validate() throws {
       try _R.validate()
@@ -433,6 +759,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
+        if UIKit.UIImage(named: "house", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'house' is used in storyboard 'Home', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "house.fill", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'house.fill' is used in storyboard 'Home', but couldn't be loaded.") }
         if UIKit.UIImage(named: "magnifyingglass.circle.fill", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'magnifyingglass.circle.fill' is used in storyboard 'Home', but couldn't be loaded.") }
         if UIKit.UIImage(named: "suit.heart", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'suit.heart' is used in storyboard 'Home', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
@@ -466,18 +794,12 @@ struct _R: Rswift.Validatable {
     struct main: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
       typealias InitialController = UIKit.UINavigationController
 
-      let baseViewController = StoryboardViewControllerResource<BaseViewController>(identifier: "BaseViewController")
       let bundle = R.hostingBundle
       let name = "Main"
-
-      func baseViewController(_: Void = ()) -> BaseViewController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: baseViewController)
-      }
 
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
-        if _R.storyboard.main().baseViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'baseViewController' could not be loaded from storyboard 'Main' as 'BaseViewController'.") }
       }
 
       fileprivate init() {}
@@ -497,6 +819,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
+        if UIKit.UIImage(named: "gearshape", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'gearshape' is used in storyboard 'Setting', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "gearshape.fill", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'gearshape.fill' is used in storyboard 'Setting', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.setting().settingViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'settingViewController' could not be loaded from storyboard 'Setting' as 'SettingViewController'.") }

@@ -9,7 +9,7 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-class FavouriteListViewController: UIViewController {
+class FavouriteListViewController: BaseViewController {
 
     @IBOutlet weak var favouriteListTableView: UITableView!
     
@@ -19,7 +19,7 @@ class FavouriteListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setNavigationBar(.backWithTitle(title: "Favourite Album"))
+        setNavigationBar(.backWithTitle(title: localized.favourite_album_title.string()))
         favouriteListTableView.delegate = self
         favouriteListTableView.dataSource = self
         favouriteListTableView.register(UINib(resource: R.nib.favouriteListTableViewCell),

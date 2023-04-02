@@ -1,0 +1,31 @@
+/* 
+  Localizable.strings
+  AlbumList
+
+  Created by Bowie Tso on 2/4/2023.
+  
+*/
+
+//MARK: Bottom Tab Bar
+"bottom_tab_bar_home" = "Home";
+"bottom_tab_bar_setting" = "Setting";
+
+"cancel" = "Cancel";
+
+//MARK: Album Detail Page
+
+"album_detail_released_on" = "Released on";
+"album_detail_primary_genre" = "Primary Genre";
+"album_detail_no_of_tracks" = "No. Of Track";
+"album_detail_country" = "Country";
+"album_detail_price" = "Price";
+"album_detail_show_album_on_apple_music" = "Show Album On Apple Music";
+"album_detail_show_artist_on_apple_music" = "Show Artist On Apple Music";
+
+//MARK: Favourite Album
+"favourite_album_title" = "Favourite Album";
+"favourite_album_title_remove" = "Remove album";
+
+//MARK: Setting
+"setting_language" = "Language";
+"setting_choose_language" = "Choose Language";

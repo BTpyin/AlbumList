@@ -11,5 +11,6 @@ import SwiftyUserDefaults
 extension DefaultsKeys {
     
     var favourite_albums: DefaultsKey<AlbumList?> { .init("favourite_albums")}
+    var LANGUAGE: DefaultsKey<String?> {.init("LanguageKey")}
 
 }

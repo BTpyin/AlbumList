@@ -32,6 +32,7 @@ extension API: TargetType {
         switch self {
             case .search(let keyword):
                 return .requestParameters(parameters: ["term" : keyword,
+                                                       "lang" : (isLanguageEN ? "en_us" : "zh_hk"),
                                                        "entity" : "album"],
                                           encoding: URLEncoding.queryString)
         }

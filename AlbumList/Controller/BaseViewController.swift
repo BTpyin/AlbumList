@@ -31,6 +31,11 @@ class BaseViewController: UIViewController {
         networkRetryView.removeFromSuperview()
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        overrideUserInterfaceStyle = .light
+    }
+    
 //    override func viewWillAppear(_ animated: Bool) {
 //        super.viewWillAppear(animated)
 //    }

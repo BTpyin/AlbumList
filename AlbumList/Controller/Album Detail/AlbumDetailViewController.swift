@@ -13,7 +13,7 @@ protocol AlbumDetailViewControllerDeletgate: AnyObject {
     func didDetailPageIsFavouriteTapped(collectionId: Int)
 }
 
-class AlbumDetailViewController: UIViewController {
+class AlbumDetailViewController: BaseViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
     

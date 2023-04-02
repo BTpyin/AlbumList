@@ -32,6 +32,7 @@ extension UIViewController {
             navigationController.navigationBar.shadowOffset = CGSize(width: 0, height: 0.5)
             navigationController.navigationBar.shadowOpacity = 0.2
             navigationController.navigationBar.layer.masksToBounds = false
+            navigationController.navigationBar.setColors(background: .white, text: UIColor(red: 0, green: 0, blue: 0, alpha: 0.85))
             
             if #available(iOS 13.0, *) {
                 let appearance = UINavigationBarAppearance()
@@ -84,6 +85,31 @@ extension UIViewController {
             action()
         } else {
             navigationController?.popViewController()
+        }
+    }
+    
+//    MARK: Navigation
+    
+    func popToRootViewControllerAndBackToHome() {
+        navigationController?.popToRootViewController(animated: true) {
+            let firstViewController = self.navigationController?.viewControllers.first
+            if let tabbarVC: AlbumListTabBarController = firstViewController as? AlbumListTabBarController {
+                tabbarVC.selectedIndex = 0
+            }
+        }
+    }
+}
+
+extension UINavigationController {
+    func popToRootViewController(animated: Bool, completion: @escaping () -> Void) {
+        popToRootViewController(animated: animated)
+
+        if animated, let coordinator = transitionCoordinator {
+            coordinator.animate(alongsideTransition: nil) { _ in
+                completion()
+            }
+        } else {
+            completion()
         }
     }
 }

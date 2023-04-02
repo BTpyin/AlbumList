@@ -37,7 +37,7 @@ struct AlbumDetailViewControllerViewModel {
         artistName.accept(model.artistName ?? "")
         copyrightText.accept(model.copyright ?? "")
         country.accept(model.country ?? "")
-//        releaseDate.accept(model.releaseDate ?? "")
+        releaseDate.accept(model.releaseDate?.string(withFormat: "YYYY/MM/dd") ?? "")
         genre.accept(model.primaryGenreName ?? "")
         noOfTrack.accept((model.trackCount ?? 0).string)
         price.accept(String(format: "$%.2f", (model.collectionPrice ?? 0.0)))

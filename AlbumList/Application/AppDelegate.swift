@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftyUserDefaults
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -13,9 +14,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     class func sharedInstance() -> AppDelegate {
         return UIApplication.shared.delegate as! AppDelegate
     }
+    
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        setLanguage()
         return true
     }
 
@@ -34,5 +38,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+    private func setLanguage() {
+        guard Defaults[\.LANGUAGE] != nil else {
+            Defaults[\.LANGUAGE] = Locale.current.languageCode == "zh" ? "tc" : "en"
+            return
+        }
+    }
 }
 
+func startMainStoryboard(completion: (() -> Void)? = nil) {
+    AppDelegate.sharedInstance().window?.switchRootViewController(to: R.storyboard.main().instantiateInitialViewController()!,
+                                                                  animated: false,
+                                                                  duration: 0,
+                                                                  options: [],
+                                                                  completion)
+}
