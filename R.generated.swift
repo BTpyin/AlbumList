@@ -149,12 +149,21 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 2 images.
+  /// This `R.image` struct is generated, and contains static references to 3 images.
   struct image {
+    /// Image `arrow_right`.
+    static let arrow_right = Rswift.ImageResource(bundle: R.hostingBundle, name: "arrow_right")
     /// Image `back`.
     static let back = Rswift.ImageResource(bundle: R.hostingBundle, name: "back")
     /// Image `more`.
     static let more = Rswift.ImageResource(bundle: R.hostingBundle, name: "more")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "arrow_right", bundle: ..., traitCollection: ...)`
+    static func arrow_right(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.arrow_right, compatibleWith: traitCollection)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "back", bundle: ..., traitCollection: ...)`
@@ -204,12 +213,16 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 4 nibs.
   struct nib {
     /// Nib `AlbumCollectionViewCell`.
     static let albumCollectionViewCell = _R.nib._AlbumCollectionViewCell()
     /// Nib `FavouriteListTableViewCell`.
     static let favouriteListTableViewCell = _R.nib._FavouriteListTableViewCell()
+    /// Nib `SettingTableViewCell`.
+    static let settingTableViewCell = _R.nib._SettingTableViewCell()
+    /// Nib `SettingTableViewMyFavouriteCell`.
+    static let settingTableViewMyFavouriteCell = _R.nib._SettingTableViewMyFavouriteCell()
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "AlbumCollectionViewCell", in: bundle)`
@@ -227,6 +240,22 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "SettingTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.settingTableViewCell) instead")
+    static func settingTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.settingTableViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "SettingTableViewMyFavouriteCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.settingTableViewMyFavouriteCell) instead")
+    static func settingTableViewMyFavouriteCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.settingTableViewMyFavouriteCell)
+    }
+    #endif
+
     static func albumCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> AlbumCollectionViewCell? {
       return R.nib.albumCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AlbumCollectionViewCell
     }
@@ -235,15 +264,25 @@ struct R: Rswift.Validatable {
       return R.nib.favouriteListTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? FavouriteListTableViewCell
     }
 
+    static func settingTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> SettingTableViewCell? {
+      return R.nib.settingTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? SettingTableViewCell
+    }
+
+    static func settingTableViewMyFavouriteCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> SettingTableViewMyFavouriteCell? {
+      return R.nib.settingTableViewMyFavouriteCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? SettingTableViewMyFavouriteCell
+    }
+
     fileprivate init() {}
   }
 
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 2 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 3 reuse identifiers.
   struct reuseIdentifier {
     /// Reuse identifier `AlbumCollectionViewCell`.
     static let albumCollectionViewCell: Rswift.ReuseIdentifier<AlbumCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "AlbumCollectionViewCell")
     /// Reuse identifier `FavouriteListTableViewCell`.
     static let favouriteListTableViewCell: Rswift.ReuseIdentifier<FavouriteListTableViewCell> = Rswift.ReuseIdentifier(identifier: "FavouriteListTableViewCell")
+    /// Reuse identifier `SettingTableViewCell`.
+    static let settingTableViewCell: Rswift.ReuseIdentifier<SettingTableViewCell> = Rswift.ReuseIdentifier(identifier: "SettingTableViewCell")
 
     fileprivate init() {}
   }
@@ -276,6 +315,7 @@ struct _R: Rswift.Validatable {
     static func validate() throws {
       try _AlbumCollectionViewCell.validate()
       try _FavouriteListTableViewCell.validate()
+      try _SettingTableViewCell.validate()
     }
 
     struct _AlbumCollectionViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType, Rswift.Validatable {
@@ -313,6 +353,37 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "more", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'more' is used in nib 'FavouriteListTableViewCell', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _SettingTableViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType, Rswift.Validatable {
+      typealias ReusableType = SettingTableViewCell
+
+      let bundle = R.hostingBundle
+      let identifier = "SettingTableViewCell"
+      let name = "SettingTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> SettingTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? SettingTableViewCell
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "arrow_right", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'arrow_right' is used in nib 'SettingTableViewCell', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _SettingTableViewMyFavouriteCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "SettingTableViewMyFavouriteCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> SettingTableViewMyFavouriteCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? SettingTableViewMyFavouriteCell
       }
 
       fileprivate init() {}

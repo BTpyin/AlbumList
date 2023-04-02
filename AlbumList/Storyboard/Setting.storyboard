@@ -34,10 +34,25 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="iz6-tF-gBS">
+                                <rect key="frame" x="0.0" y="101" width="390" height="660"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="iz6-tF-gBS" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="68X-eq-uHE"/>
+                            <constraint firstItem="iz6-tF-gBS" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="Yw8-hz-O5t"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="iz6-tF-gBS" secondAttribute="bottom" id="ZwC-ur-h8E"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="iz6-tF-gBS" secondAttribute="trailing" id="vvm-I6-8wg"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="oXz-3F-cDN"/>
+                    <connections>
+                        <outlet property="settingTableView" destination="iz6-tF-gBS" id="Obs-12-3dV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

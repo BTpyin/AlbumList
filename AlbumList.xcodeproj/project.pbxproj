@@ -42,6 +42,10 @@
 		0EE2406529D965C2001DDB1E /* FavouriteListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EE2406329D965C2001DDB1E /* FavouriteListTableViewCell.xib */; };
 		0EE2406729D96B18001DDB1E /* FavouriteListTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE2406629D96B18001DDB1E /* FavouriteListTableViewCellViewModel.swift */; };
 		0EE2406929D96CA9001DDB1E /* FavouriteListViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE2406829D96CA9001DDB1E /* FavouriteListViewControllerViewModel.swift */; };
+		0EE2406C29D98249001DDB1E /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE2406A29D98249001DDB1E /* SettingTableViewCell.swift */; };
+		0EE2406D29D98249001DDB1E /* SettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EE2406B29D98249001DDB1E /* SettingTableViewCell.xib */; };
+		0EE2407029D982AD001DDB1E /* SettingTableViewMyFavouriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE2406E29D982AD001DDB1E /* SettingTableViewMyFavouriteCell.swift */; };
+		0EE2407129D982AD001DDB1E /* SettingTableViewMyFavouriteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EE2406F29D982AD001DDB1E /* SettingTableViewMyFavouriteCell.xib */; };
 		FEB7D20122E5DF54E2A250E4 /* Pods_AlbumList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C9D8AB33ECDDAA35AEA5C81 /* Pods_AlbumList.framework */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +88,10 @@
 		0EE2406329D965C2001DDB1E /* FavouriteListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouriteListTableViewCell.xib; sourceTree = "<group>"; };
 		0EE2406629D96B18001DDB1E /* FavouriteListTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteListTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		0EE2406829D96CA9001DDB1E /* FavouriteListViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteListViewControllerViewModel.swift; sourceTree = "<group>"; };
+		0EE2406A29D98249001DDB1E /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
+		0EE2406B29D98249001DDB1E /* SettingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingTableViewCell.xib; sourceTree = "<group>"; };
+		0EE2406E29D982AD001DDB1E /* SettingTableViewMyFavouriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewMyFavouriteCell.swift; sourceTree = "<group>"; };
+		0EE2406F29D982AD001DDB1E /* SettingTableViewMyFavouriteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingTableViewMyFavouriteCell.xib; sourceTree = "<group>"; };
 		7FA888C1E17FB13F99FF92CE /* Pods-AlbumList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlbumList.debug.xcconfig"; path = "Target Support Files/Pods-AlbumList/Pods-AlbumList.debug.xcconfig"; sourceTree = "<group>"; };
 		C95DF1C919654620D4D26874 /* Pods-AlbumList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlbumList.release.xcconfig"; path = "Target Support Files/Pods-AlbumList/Pods-AlbumList.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -222,6 +230,10 @@
 			isa = PBXGroup;
 			children = (
 				0EC9428629D40DE400B35ABD /* SettingViewController.swift */,
+				0EE2406A29D98249001DDB1E /* SettingTableViewCell.swift */,
+				0EE2406B29D98249001DDB1E /* SettingTableViewCell.xib */,
+				0EE2406E29D982AD001DDB1E /* SettingTableViewMyFavouriteCell.swift */,
+				0EE2406F29D982AD001DDB1E /* SettingTableViewMyFavouriteCell.xib */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -337,8 +349,10 @@
 			files = (
 				0EE2406529D965C2001DDB1E /* FavouriteListTableViewCell.xib in Resources */,
 				0EB09D6329D30D4900FC21BB /* LaunchScreen.storyboard in Resources */,
+				0EE2406D29D98249001DDB1E /* SettingTableViewCell.xib in Resources */,
 				0EB09D6029D30D4900FC21BB /* Assets.xcassets in Resources */,
 				0EC9428329D4097500B35ABD /* Setting.storyboard in Resources */,
+				0EE2407129D982AD001DDB1E /* SettingTableViewMyFavouriteCell.xib in Resources */,
 				0EB09D5E29D30D4700FC21BB /* Main.storyboard in Resources */,
 				0EE2405E29D9635A001DDB1E /* AlbumCollectionViewCell.xib in Resources */,
 				0EC9428129D4095700B35ABD /* Home.storyboard in Resources */,
@@ -417,6 +431,7 @@
 				0EC9429629D5640E00B35ABD /* NetworkManager.swift in Sources */,
 				0EC9428E29D43C5000B35ABD /* AlbumCollectionViewCell.swift in Sources */,
 				0EC9427F29D3538D00B35ABD /* CustomNavigationBar.swift in Sources */,
+				0EE2406C29D98249001DDB1E /* SettingTableViewCell.swift in Sources */,
 				0EC942A129D5AD8700B35ABD /* Album.swift in Sources */,
 				0EE2406029D964D5001DDB1E /* FavouriteListViewController.swift in Sources */,
 				0EC9427D29D34AAD00B35ABD /* AlbumListTabBarController.swift in Sources */,
@@ -434,6 +449,7 @@
 				0EC9429A29D565F300B35ABD /* Constant.swift in Sources */,
 				0EB09D5729D30D4700FC21BB /* AppDelegate.swift in Sources */,
 				0EC9429829D5654A00B35ABD /* API.swift in Sources */,
+				0EE2407029D982AD001DDB1E /* SettingTableViewMyFavouriteCell.swift in Sources */,
 				0E9FA83C29D6FAEA002F2D78 /* AlbumDetailViewControllerViewModel.swift in Sources */,
 				0E9FA83E29D83AFE002F2D78 /* DefaultKeys.swift in Sources */,
 				0EB09D5929D30D4700FC21BB /* SceneDelegate.swift in Sources */,
