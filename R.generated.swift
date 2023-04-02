@@ -149,15 +149,24 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 1 images.
+  /// This `R.image` struct is generated, and contains static references to 2 images.
   struct image {
     /// Image `back`.
     static let back = Rswift.ImageResource(bundle: R.hostingBundle, name: "back")
+    /// Image `more`.
+    static let more = Rswift.ImageResource(bundle: R.hostingBundle, name: "more")
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "back", bundle: ..., traitCollection: ...)`
     static func back(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.back, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "more", bundle: ..., traitCollection: ...)`
+    static func more(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.more, compatibleWith: traitCollection)
     }
     #endif
 
@@ -195,10 +204,12 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
   struct nib {
     /// Nib `AlbumCollectionViewCell`.
     static let albumCollectionViewCell = _R.nib._AlbumCollectionViewCell()
+    /// Nib `FavouriteListTableViewCell`.
+    static let favouriteListTableViewCell = _R.nib._FavouriteListTableViewCell()
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "AlbumCollectionViewCell", in: bundle)`
@@ -208,17 +219,31 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "FavouriteListTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.favouriteListTableViewCell) instead")
+    static func favouriteListTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.favouriteListTableViewCell)
+    }
+    #endif
+
     static func albumCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> AlbumCollectionViewCell? {
       return R.nib.albumCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AlbumCollectionViewCell
+    }
+
+    static func favouriteListTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> FavouriteListTableViewCell? {
+      return R.nib.favouriteListTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? FavouriteListTableViewCell
     }
 
     fileprivate init() {}
   }
 
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 2 reuse identifiers.
   struct reuseIdentifier {
     /// Reuse identifier `AlbumCollectionViewCell`.
     static let albumCollectionViewCell: Rswift.ReuseIdentifier<AlbumCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "AlbumCollectionViewCell")
+    /// Reuse identifier `FavouriteListTableViewCell`.
+    static let favouriteListTableViewCell: Rswift.ReuseIdentifier<FavouriteListTableViewCell> = Rswift.ReuseIdentifier(identifier: "FavouriteListTableViewCell")
 
     fileprivate init() {}
   }
@@ -250,6 +275,7 @@ struct _R: Rswift.Validatable {
   struct nib: Rswift.Validatable {
     static func validate() throws {
       try _AlbumCollectionViewCell.validate()
+      try _FavouriteListTableViewCell.validate()
     }
 
     struct _AlbumCollectionViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType, Rswift.Validatable {
@@ -265,6 +291,26 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if UIKit.UIImage(named: "heart", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'heart' is used in nib 'AlbumCollectionViewCell', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _FavouriteListTableViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType, Rswift.Validatable {
+      typealias ReusableType = FavouriteListTableViewCell
+
+      let bundle = R.hostingBundle
+      let identifier = "FavouriteListTableViewCell"
+      let name = "FavouriteListTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> FavouriteListTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? FavouriteListTableViewCell
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "more", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'more' is used in nib 'FavouriteListTableViewCell', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -299,6 +345,7 @@ struct _R: Rswift.Validatable {
 
       let albumDetailViewController = StoryboardViewControllerResource<AlbumDetailViewController>(identifier: "AlbumDetailViewController")
       let bundle = R.hostingBundle
+      let favouriteListViewController = StoryboardViewControllerResource<FavouriteListViewController>(identifier: "FavouriteListViewController")
       let homeViewController = StoryboardViewControllerResource<HomeViewController>(identifier: "HomeViewController")
       let name = "Home"
 
@@ -306,16 +353,21 @@ struct _R: Rswift.Validatable {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: albumDetailViewController)
       }
 
+      func favouriteListViewController(_: Void = ()) -> FavouriteListViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: favouriteListViewController)
+      }
+
       func homeViewController(_: Void = ()) -> HomeViewController? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: homeViewController)
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "clear.fill", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'clear.fill' is used in storyboard 'Home', but couldn't be loaded.") }
         if UIKit.UIImage(named: "magnifyingglass.circle.fill", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'magnifyingglass.circle.fill' is used in storyboard 'Home', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "suit.heart", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'suit.heart' is used in storyboard 'Home', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.home().albumDetailViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'albumDetailViewController' could not be loaded from storyboard 'Home' as 'AlbumDetailViewController'.") }
+        if _R.storyboard.home().favouriteListViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'favouriteListViewController' could not be loaded from storyboard 'Home' as 'FavouriteListViewController'.") }
         if _R.storyboard.home().homeViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'homeViewController' could not be loaded from storyboard 'Home' as 'HomeViewController'.") }
       }
 

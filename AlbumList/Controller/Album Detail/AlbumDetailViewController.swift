@@ -45,10 +45,21 @@ class AlbumDetailViewController: UIViewController {
     
     let disposeBag = DisposeBag()
     
+    let showAlbumContainerViewGradientLayer = CAGradientLayer()
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         isFavouriteImageView.dropShadow(color: .black, opacity: 0.1, offSet: .zero, radius: 2)
+        showAlbumContainerViewGradientLayer.frame = showAlbumContainerView.bounds
+        showAlbumContainerViewGradientLayer.colors = [UIColor(red: 0, green: 0, blue: 0, alpha: 0.8).cgColor,
+                                                        UIColor(red: 0, green: 0, blue: 0, alpha: 0.7).cgColor,
+                                                        UIColor(red: 0, green: 0, blue: 0, alpha: 0.5).cgColor]
+//        showAlbumContainerViewGradientLayer.startPoint = CGPoint(x: 0.25, y: 0.5)
+//        showAlbumContainerViewGradientLayer.endPoint = CGPoint(x: 1, y: 0.5)
+        showAlbumContainerView.layer.sublayers?.removeAll(where: {$0 is CAGradientLayer})
+        showAlbumContainerView.layer.insertSublayer(self.showAlbumContainerViewGradientLayer, at: 0)
+        showAlbumContainerView.translatesAutoresizingMaskIntoConstraints = false
+        
     }
     
     override func viewDidLoad() {

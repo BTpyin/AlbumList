@@ -13,6 +13,7 @@ import SwiftyUserDefaults
 class HomeViewController: BaseViewController {
 
     @IBOutlet weak var searchBarContainerView: UIView!
+    @IBOutlet weak var favouriteImageView: UIImageView!
     @IBOutlet weak var searchBarTextField: UITextField!
     @IBOutlet weak var cancelButtonContainerView: UIView!
     @IBOutlet weak var cancelButton: UIButton!
@@ -26,8 +27,6 @@ class HomeViewController: BaseViewController {
         super.viewDidLoad()
         setupCollectionViewAndSearchBar()
         setupBinding()
-        cancelButton.setTitle("", for: .normal)
-        cancelButton.imageView?.tintColor = .darkGray
         viewModel.callApiForAlbumList(keyword: viewModel.searchBarKeyowrd.value).disposed(by: disposeBag)
         // Do any additional setup after loading the view.
     }
@@ -35,6 +34,7 @@ class HomeViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         hideNavigationBar()
+        albumListCollectionView.reloadData()
     }
     
     func setupCollectionViewAndSearchBar() {
@@ -45,12 +45,16 @@ class HomeViewController: BaseViewController {
         searchBarTextField.delegate = self
         searchBarTextField.text = viewModel.searchBarKeyowrd.value
         
+        favouriteImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didFavouriteImageTapped)))
+        favouriteImageView.isUserInteractionEnabled = true
     }
+    
     
     func setupBinding() {
         viewModel.albumList.bind { [weak self] (list) in
             guard let self = self else {return}
             self.albumListCollectionView.reloadData()
+            self.albumListCollectionView.safeScrollToItem(at: .init(row: 0, section: 0), at: .top, animated: true)
         }.disposed(by: disposeBag)
         
         self.searchBarTextField.rx.controlEvent([.editingDidBegin]).bind{[weak self] (isEditing) in
@@ -75,6 +79,11 @@ class HomeViewController: BaseViewController {
     @IBAction func didCancelButtonTapped(_ sender: Any) {
         searchBarTextField.endEditing(true)
     }
+    
+    @objc func didFavouriteImageTapped() {
+        let vc = R.storyboard.home.favouriteListViewController()!
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 extension HomeViewController: UITextFieldDelegate {
@@ -88,6 +97,11 @@ extension HomeViewController: UITextFieldDelegate {
 
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        searchBarTextField.endEditing(true)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.albumList.value.count
     }
@@ -133,6 +147,6 @@ extension HomeViewController: AlbumDetailViewControllerDeletgate {
                 FavouriteHelper.setOrAddNewFavouriteAlbum(album: selectedAlbum)
             }
         }
-        albumListCollectionView.reloadData()
+//        albumListCollectionView.reloadData()
     }
 }
