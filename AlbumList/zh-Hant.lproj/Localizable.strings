@@ -11,6 +11,8 @@
 
 "cancel" = "取消";
 
+"search_no_result_text" = "抱歉，找不到結果";
+
 //MARK: Album Detail Page
 
 "album_detail_released_on" = "發表日期";
@@ -24,6 +26,7 @@
 //MARK: Favourite Album
 "favourite_album_title" = "最愛專輯";
 "favourite_album_title_remove" = "移除專輯";
+"favourite_list_empty" = "喜歡嘅專輯暫時沒有:(";
 
 //MARK: Setting
 "setting_language" = "語言";

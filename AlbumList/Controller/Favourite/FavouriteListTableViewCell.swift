@@ -9,6 +9,10 @@ import UIKit
 import RxCocoa
 import RxSwift
 
+protocol FavouriteListTableViewCellDeletgate: AnyObject {
+    func didTapMoreButton(collectionId: Int)
+}
+
 class FavouriteListTableViewCell: UITableViewCell {
     
     static let cellId = "FavouriteListTableViewCell"
@@ -17,7 +21,11 @@ class FavouriteListTableViewCell: UITableViewCell {
     @IBOutlet weak var collectionNameLabel: UILabel!
     @IBOutlet weak var artistNameLabel: UILabel!
     @IBOutlet weak var moreButton: UIButton!
+    
     let viewModel = FavouriteListTableViewCellViewModel()
+    
+    weak var delegate: FavouriteListTableViewCellDeletgate?
+    
     var disposeBag = DisposeBag()
     
     override func awakeFromNib() {
@@ -35,6 +43,10 @@ class FavouriteListTableViewCell: UITableViewCell {
         viewModel.artistName.bind(to: artistNameLabel.rx.text).disposed(by: disposeBag)
     }
 
+    @IBAction func moreButtonTapped(_ sender: Any) {
+        delegate?.didTapMoreButton(collectionId: viewModel.collectionId.value)
+    }
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         disposeBag = DisposeBag()

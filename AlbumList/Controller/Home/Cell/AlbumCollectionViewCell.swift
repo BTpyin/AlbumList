@@ -24,7 +24,6 @@ class AlbumCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var albumImageView: UIImageView!
     @IBOutlet weak var collectionLabel: UILabel!
     @IBOutlet weak var artistLabel: UILabel!
-    @IBOutlet weak var copyrightLabel: UILabel!
     
     @IBOutlet weak var isFavouriteImageView: UIImageView!
     
@@ -48,10 +47,7 @@ class AlbumCollectionViewCell: UICollectionViewCell {
         self.viewModel = viewModel
         viewModel.artistName.bind(to: artistLabel.rx.text).disposed(by: disposeBag)
         viewModel.collectionName.bind(to: collectionLabel.rx.text).disposed(by: disposeBag)
-        viewModel.copyrightText.bind { [weak self] (text) in
-            guard let self = self else {return}
-            self.copyrightLabel.text = text
-        }.disposed(by: disposeBag)
+
         viewModel.albumImageUrl.bind(to: albumImageView.rx.imageURL).disposed(by: disposeBag)
         
         viewModel.isFavourite.bind { [weak self] (isFavourite) in

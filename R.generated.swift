@@ -149,7 +149,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 3 images.
+  /// This `R.image` struct is generated, and contains static references to 4 images.
   struct image {
     /// Image `arrow_right`.
     static let arrow_right = Rswift.ImageResource(bundle: R.hostingBundle, name: "arrow_right")
@@ -157,6 +157,8 @@ struct R: Rswift.Validatable {
     static let back = Rswift.ImageResource(bundle: R.hostingBundle, name: "back")
     /// Image `more`.
     static let more = Rswift.ImageResource(bundle: R.hostingBundle, name: "more")
+    /// Image `search_no_result_icon`.
+    static let search_no_result_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "search_no_result_icon")
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "arrow_right", bundle: ..., traitCollection: ...)`
@@ -176,6 +178,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "more", bundle: ..., traitCollection: ...)`
     static func more(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.more, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "search_no_result_icon", bundle: ..., traitCollection: ...)`
+    static func search_no_result_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.search_no_result_icon, compatibleWith: traitCollection)
     }
     #endif
 
@@ -294,7 +303,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 14 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 16 localization keys.
     struct localizable {
       /// en translation: Cancel
       ///
@@ -312,6 +321,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: zh-HK, zh-Hant, en
       static let favourite_album_title = Rswift.StringResource(key: "favourite_album_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-HK", "zh-Hant", "en"], comment: nil)
+      /// en translation: Favourite Album list is empty :(
+      ///
+      /// Locales: zh-HK, zh-Hant, en
+      static let favourite_list_empty = Rswift.StringResource(key: "favourite_list_empty", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-HK", "zh-Hant", "en"], comment: nil)
       /// en translation: Home
       ///
       /// Locales: zh-HK, zh-Hant, en
@@ -352,6 +365,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: zh-HK, zh-Hant, en
       static let album_detail_show_artist_on_apple_music = Rswift.StringResource(key: "album_detail_show_artist_on_apple_music", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-HK", "zh-Hant", "en"], comment: nil)
+      /// en translation: Sorry! No Search Result
+      ///
+      /// Locales: zh-HK, zh-Hant, en
+      static let search_no_result_text = Rswift.StringResource(key: "search_no_result_text", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-HK", "zh-Hant", "en"], comment: nil)
 
       /// en translation: Cancel
       ///
@@ -411,6 +428,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("favourite_album_title", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Favourite Album list is empty :(
+      ///
+      /// Locales: zh-HK, zh-Hant, en
+      static func favourite_list_empty(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("favourite_list_empty", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "favourite_list_empty"
+        }
+
+        return NSLocalizedString("favourite_list_empty", bundle: bundle, comment: "")
       }
 
       /// en translation: Home
@@ -561,6 +593,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("album_detail_show_artist_on_apple_music", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Sorry! No Search Result
+      ///
+      /// Locales: zh-HK, zh-Hant, en
+      static func search_no_result_text(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("search_no_result_text", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "search_no_result_text"
+        }
+
+        return NSLocalizedString("search_no_result_text", bundle: bundle, comment: "")
       }
 
       fileprivate init() {}
@@ -759,9 +806,11 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
+        if UIKit.UIImage(named: "heart.slash.circle.fill", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'heart.slash.circle.fill' is used in storyboard 'Home', but couldn't be loaded.") }
         if UIKit.UIImage(named: "house", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'house' is used in storyboard 'Home', but couldn't be loaded.") }
         if UIKit.UIImage(named: "house.fill", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'house.fill' is used in storyboard 'Home', but couldn't be loaded.") }
         if UIKit.UIImage(named: "magnifyingglass.circle.fill", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'magnifyingglass.circle.fill' is used in storyboard 'Home', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "search_no_result_icon", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'search_no_result_icon' is used in storyboard 'Home', but couldn't be loaded.") }
         if UIKit.UIImage(named: "suit.heart", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'suit.heart' is used in storyboard 'Home', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }

@@ -45,21 +45,10 @@ class AlbumDetailViewController: BaseViewController {
     
     let disposeBag = DisposeBag()
     
-    let showAlbumContainerViewGradientLayer = CAGradientLayer()
-    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         isFavouriteImageView.dropShadow(color: .black, opacity: 0.1, offSet: .zero, radius: 2)
-        showAlbumContainerViewGradientLayer.frame = showAlbumContainerView.bounds
-        showAlbumContainerViewGradientLayer.colors = [UIColor(red: 0, green: 0, blue: 0, alpha: 0.8).cgColor,
-                                                        UIColor(red: 0, green: 0, blue: 0, alpha: 0.7).cgColor,
-                                                        UIColor(red: 0, green: 0, blue: 0, alpha: 0.5).cgColor]
-//        showAlbumContainerViewGradientLayer.startPoint = CGPoint(x: 0.25, y: 0.5)
-//        showAlbumContainerViewGradientLayer.endPoint = CGPoint(x: 1, y: 0.5)
-        showAlbumContainerView.layer.sublayers?.removeAll(where: {$0 is CAGradientLayer})
-        showAlbumContainerView.layer.insertSublayer(self.showAlbumContainerViewGradientLayer, at: 0)
-        showAlbumContainerView.translatesAutoresizingMaskIntoConstraints = false
-        
+        albumDetailCardView.dropShadow(color: .black, opacity: 0.2, offSet: .zero, radius: 3)
     }
     
     override func viewDidLoad() {
@@ -72,7 +61,6 @@ class AlbumDetailViewController: BaseViewController {
     func setupView() {
         isFavouriteImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didIsFavouriteTapped)))
         isFavouriteImageView.isUserInteractionEnabled = true
-        
     }
     
     func setupBinding() {
@@ -111,8 +99,25 @@ class AlbumDetailViewController: BaseViewController {
     
     @IBAction func didShowAlbumTapped(_ sender: Any) {
         print("didShowAlbumTapped")
+        if let albumUrl = URL(string: viewModel.albumUrl.value) {
+            if UIApplication.shared.canOpenURL(albumUrl)
+            {
+                UIApplication.shared.open(albumUrl)
+            } else {
+                UIApplication.shared.open(albumUrl)
+            }
+        }
     }
+    
     @IBAction func didShowArtistTapped(_ sender: Any) {
         print("didShowArtistTapped")
+        if let artistUrl = URL(string: viewModel.artistUrl.value) {
+            if UIApplication.shared.canOpenURL(artistUrl)
+            {
+                UIApplication.shared.open(artistUrl)
+            } else {
+                UIApplication.shared.open(artistUrl)
+            }
+        }
     }
 }

@@ -12,6 +12,8 @@
 
 "cancel" = "Cancel";
 
+"search_no_result_text" = "Sorry! No Search Result";
+
 //MARK: Album Detail Page
 
 "album_detail_released_on" = "Released on";
@@ -25,6 +27,7 @@
 //MARK: Favourite Album
 "favourite_album_title" = "Favourite Album";
 "favourite_album_title_remove" = "Remove album";
+"favourite_list_empty" = "Favourite Album list is empty :(";
 
 //MARK: Setting
 "setting_language" = "Language";

@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -42,12 +41,6 @@
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright text" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aaB-0m-kYi">
-                                        <rect key="frame" x="20" y="218.33333333333334" width="128" height="9.6666666666666572"/>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="8"/>
-                                        <color key="textColor" systemColor="systemGrayColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TNb-cG-sK5">
                                         <rect key="frame" x="4" y="213.66666666666666" width="142" height="14.333333333333343"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
@@ -69,31 +62,22 @@
                                     <constraint firstAttribute="trailing" secondItem="76p-KB-7yn" secondAttribute="trailing" constant="4" id="1kV-C6-1Lf"/>
                                     <constraint firstItem="76p-KB-7yn" firstAttribute="leading" secondItem="JgS-d8-MlP" secondAttribute="leading" constant="4" id="70a-Wq-ypN"/>
                                     <constraint firstItem="TNb-cG-sK5" firstAttribute="leading" secondItem="JgS-d8-MlP" secondAttribute="leading" constant="4" id="9o9-4r-NKx"/>
-                                    <constraint firstAttribute="trailing" secondItem="aaB-0m-kYi" secondAttribute="trailing" constant="2" id="Axh-eJ-FsP"/>
                                     <constraint firstItem="Zf1-13-GZG" firstAttribute="centerX" secondItem="JgS-d8-MlP" secondAttribute="centerX" id="Gne-YA-cEU"/>
                                     <constraint firstAttribute="trailing" secondItem="cHv-wt-aHI" secondAttribute="trailing" constant="12" id="NtG-4P-9Pu"/>
                                     <constraint firstItem="cHv-wt-aHI" firstAttribute="top" secondItem="JgS-d8-MlP" secondAttribute="top" constant="12" id="PGE-CO-h19"/>
-                                    <constraint firstAttribute="bottom" secondItem="aaB-0m-kYi" secondAttribute="bottom" constant="8" id="YTf-7b-tCO"/>
                                     <constraint firstAttribute="trailing" secondItem="TNb-cG-sK5" secondAttribute="trailing" constant="4" id="ZLL-kC-562"/>
                                     <constraint firstAttribute="trailing" secondItem="Zf1-13-GZG" secondAttribute="trailing" id="cXB-W9-Ard"/>
                                     <constraint firstItem="Zf1-13-GZG" firstAttribute="leading" secondItem="JgS-d8-MlP" secondAttribute="leading" id="eSq-XS-VpG"/>
                                     <constraint firstItem="Zf1-13-GZG" firstAttribute="top" secondItem="JgS-d8-MlP" secondAttribute="top" id="glL-Jx-Mbn"/>
                                     <constraint firstItem="76p-KB-7yn" firstAttribute="top" secondItem="Zf1-13-GZG" secondAttribute="bottom" constant="6" id="ijX-ut-Hl6"/>
                                     <constraint firstItem="TNb-cG-sK5" firstAttribute="top" secondItem="76p-KB-7yn" secondAttribute="bottom" constant="8" id="pbA-M6-K8b"/>
-                                    <constraint firstItem="aaB-0m-kYi" firstAttribute="leading" secondItem="JgS-d8-MlP" secondAttribute="leading" constant="20" id="q1l-V7-PVg"/>
                                     <constraint firstAttribute="bottom" secondItem="TNb-cG-sK5" secondAttribute="bottom" constant="8" id="sbb-AR-Cp3"/>
-                                    <constraint firstItem="aaB-0m-kYi" firstAttribute="top" secondItem="TNb-cG-sK5" secondAttribute="bottom" constant="8" id="xgu-jY-kYK"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <variation key="default">
-                                    <mask key="subviews">
-                                        <exclude reference="aaB-0m-kYi"/>
-                                    </mask>
-                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -120,7 +104,6 @@
                 <outlet property="cellContentView" destination="yTc-uW-8ed" id="q9f-Ba-ObW"/>
                 <outlet property="collectionLabel" destination="76p-KB-7yn" id="WNU-yc-EOI"/>
                 <outlet property="containerView" destination="JgS-d8-MlP" id="xaq-sl-rqj"/>
-                <outlet property="copyrightLabel" destination="aaB-0m-kYi" id="qIv-Mu-Ng4"/>
                 <outlet property="isFavouriteImageView" destination="cHv-wt-aHI" id="e9G-k6-gag"/>
             </connections>
             <point key="canvasLocation" x="96.153846153846146" y="86.729857819905206"/>
@@ -128,8 +111,5 @@
     </objects>
     <resources>
         <image name="heart" catalog="system" width="128" height="107"/>
-        <systemColor name="systemGrayColor">
-            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
     </resources>
 </document>

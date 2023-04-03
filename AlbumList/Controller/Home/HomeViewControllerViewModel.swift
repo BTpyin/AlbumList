@@ -15,6 +15,8 @@ struct HomeViewControllerViewModel {
     let albumList = BehaviorRelay<AlbumList>(value: [])
     let searchBarKeyowrd = BehaviorRelay<String?>(value: "Jack Johnson")
     
+    let selectedImageUrl = BehaviorRelay<String>(value: "")
+    
     func callApiForAlbumList(keyword: String?) -> Disposable {
         return NetworkManager.requestAPI(target: .search(keyword: keyword?.removeSpaceForKeywordSearch() ?? ""), type: AlbumList?.self)
             .mapAPIObject(element: AlbumList?.self)
