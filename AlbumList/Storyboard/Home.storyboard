@@ -362,8 +362,8 @@
                                                             <constraint firstAttribute="height" constant="2" id="CPG-sx-QsV"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6C8-YW-phe">
-                                                        <rect key="frame" x="29" y="18" width="293" height="293"/>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6C8-YW-phe" customClass="GradientView" customModule="AlbumList" customModuleProvider="target">
+                                                        <rect key="frame" x="30" y="19" width="291" height="291"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -388,9 +388,9 @@
                                                 <constraints>
                                                     <constraint firstItem="IiD-Qc-ag8" firstAttribute="leading" secondItem="dcE-hU-yi1" secondAttribute="leading" constant="35" id="1uP-JX-m8h"/>
                                                     <constraint firstItem="IiD-Qc-ag8" firstAttribute="top" secondItem="dcE-hU-yi1" secondAttribute="top" constant="24" id="4ot-pZ-CEZ"/>
-                                                    <constraint firstItem="IiD-Qc-ag8" firstAttribute="bottom" secondItem="6C8-YW-phe" secondAttribute="bottom" constant="-6" id="7uy-rN-6sJ"/>
-                                                    <constraint firstItem="6C8-YW-phe" firstAttribute="top" secondItem="IiD-Qc-ag8" secondAttribute="top" constant="-6" id="BE1-uS-UtA"/>
-                                                    <constraint firstItem="IiD-Qc-ag8" firstAttribute="trailing" secondItem="6C8-YW-phe" secondAttribute="trailing" constant="-6" id="Cgz-sO-m66"/>
+                                                    <constraint firstItem="IiD-Qc-ag8" firstAttribute="bottom" secondItem="6C8-YW-phe" secondAttribute="bottom" constant="-5" id="7uy-rN-6sJ"/>
+                                                    <constraint firstItem="6C8-YW-phe" firstAttribute="top" secondItem="IiD-Qc-ag8" secondAttribute="top" constant="-5" id="BE1-uS-UtA"/>
+                                                    <constraint firstItem="IiD-Qc-ag8" firstAttribute="trailing" secondItem="6C8-YW-phe" secondAttribute="trailing" constant="-5" id="Cgz-sO-m66"/>
                                                     <constraint firstAttribute="trailing" secondItem="hfk-9a-cXC" secondAttribute="trailing" constant="16" id="Dhm-G3-2zi"/>
                                                     <constraint firstAttribute="bottom" secondItem="tl5-oB-8dU" secondAttribute="bottom" constant="10" id="DjM-w1-Kpb"/>
                                                     <constraint firstAttribute="trailing" secondItem="XCA-ad-KRj" secondAttribute="trailing" constant="16" id="IDX-Gc-vVA"/>
@@ -401,7 +401,7 @@
                                                     <constraint firstItem="XCA-ad-KRj" firstAttribute="top" secondItem="hfk-9a-cXC" secondAttribute="bottom" constant="8" id="blv-wr-vWw"/>
                                                     <constraint firstItem="sDI-2m-OTb" firstAttribute="leading" secondItem="dcE-hU-yi1" secondAttribute="leading" constant="16" id="hNO-GI-Uel"/>
                                                     <constraint firstAttribute="trailing" secondItem="tl5-oB-8dU" secondAttribute="trailing" constant="15" id="iaM-Xo-klV"/>
-                                                    <constraint firstItem="6C8-YW-phe" firstAttribute="leading" secondItem="IiD-Qc-ag8" secondAttribute="leading" constant="-6" id="iqo-me-Nwp"/>
+                                                    <constraint firstItem="6C8-YW-phe" firstAttribute="leading" secondItem="IiD-Qc-ag8" secondAttribute="leading" constant="-5" id="iqo-me-Nwp"/>
                                                     <constraint firstItem="hfk-9a-cXC" firstAttribute="top" secondItem="sDI-2m-OTb" secondAttribute="bottom" constant="8" id="kmc-FJ-jmh"/>
                                                     <constraint firstAttribute="trailing" secondItem="sDI-2m-OTb" secondAttribute="trailing" constant="16" id="o6l-0n-B2f"/>
                                                     <constraint firstItem="sDI-2m-OTb" firstAttribute="top" secondItem="IiD-Qc-ag8" secondAttribute="bottom" constant="24" id="s3P-bO-Kgy"/>
@@ -554,7 +554,7 @@
                                                             <constraint firstAttribute="height" constant="16" id="Lfb-Xo-v6w"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="80U-Gv-Yh8">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="80U-Gv-Yh8" customClass="GradientView" customModule="AlbumList" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="348" width="311" height="50"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show Collection" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="glh-95-tfe">
@@ -595,7 +595,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GA1-Ew-JV3">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GA1-Ew-JV3" customClass="GradientView" customModule="AlbumList" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="408" width="311" height="50"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show Artist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EKa-jb-Ec1">

@@ -50,6 +50,7 @@
 		0EE2407F29D9C347001DDB1E /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE2407E29D9C347001DDB1E /* UILabelExtension.swift */; };
 		0EE2408129D9C58B001DDB1E /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE2408029D9C58B001DDB1E /* UIButtonExtension.swift */; };
 		0EE2408329DA12EE001DDB1E /* UITabBarItemExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE2408229DA12EE001DDB1E /* UITabBarItemExtension.swift */; };
+		0EE2408529DB005F001DDB1E /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE2408429DB005F001DDB1E /* GradientView.swift */; };
 		FEB7D20122E5DF54E2A250E4 /* Pods_AlbumList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C9D8AB33ECDDAA35AEA5C81 /* Pods_AlbumList.framework */; };
 /* End PBXBuildFile section */
 
@@ -106,6 +107,7 @@
 		0EE2407E29D9C347001DDB1E /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
 		0EE2408029D9C58B001DDB1E /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		0EE2408229DA12EE001DDB1E /* UITabBarItemExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabBarItemExtension.swift; sourceTree = "<group>"; };
+		0EE2408429DB005F001DDB1E /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		7FA888C1E17FB13F99FF92CE /* Pods-AlbumList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlbumList.debug.xcconfig"; path = "Target Support Files/Pods-AlbumList/Pods-AlbumList.debug.xcconfig"; sourceTree = "<group>"; };
 		C95DF1C919654620D4D26874 /* Pods-AlbumList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlbumList.release.xcconfig"; path = "Target Support Files/Pods-AlbumList/Pods-AlbumList.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -174,6 +176,7 @@
 				0EC9429929D565F300B35ABD /* Constant.swift */,
 				0EC9429229D5637C00B35ABD /* Extension */,
 				0EE2407629D99C74001DDB1E /* Localizable.strings */,
+				0EE2408429DB005F001DDB1E /* GradientView.swift */,
 			);
 			path = AlbumList;
 			sourceTree = "<group>";
@@ -470,6 +473,7 @@
 				0E9FA84029D86D14002F2D78 /* FavouriteHelper.swift in Sources */,
 				0EC9429A29D565F300B35ABD /* Constant.swift in Sources */,
 				0EB09D5729D30D4700FC21BB /* AppDelegate.swift in Sources */,
+				0EE2408529DB005F001DDB1E /* GradientView.swift in Sources */,
 				0EC9429829D5654A00B35ABD /* API.swift in Sources */,
 				0EE2407029D982AD001DDB1E /* SettingTableViewMyFavouriteCell.swift in Sources */,
 				0EE2408329DA12EE001DDB1E /* UITabBarItemExtension.swift in Sources */,

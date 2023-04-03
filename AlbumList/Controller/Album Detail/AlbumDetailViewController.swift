@@ -23,7 +23,7 @@ class AlbumDetailViewController: BaseViewController {
     
     @IBOutlet weak var isFavouriteImageView: UIImageView!
     @IBOutlet weak var seperatorView: UIView!
-    @IBOutlet weak var albumImageBackgroundView: UIView!
+    @IBOutlet weak var albumImageBackgroundView: GradientView!
     @IBOutlet weak var albumImageView: UIImageView!
     
     @IBOutlet weak var releaseDateLabel: UILabel!
@@ -33,9 +33,9 @@ class AlbumDetailViewController: BaseViewController {
     @IBOutlet weak var priceLabel: UILabel!
     
     @IBOutlet weak var copyrightLabel: UILabel!
-    @IBOutlet weak var showAlbumContainerView: UIView!
+    @IBOutlet weak var showAlbumContainerView: GradientView!
     @IBOutlet weak var showAlbumTextLabel: UILabel!
-    @IBOutlet weak var showArtistContainerView: UIView!
+    @IBOutlet weak var showArtistContainerView: GradientView!
     
     @IBOutlet weak var showArtistTextLabel: UILabel!
     
@@ -55,6 +55,17 @@ class AlbumDetailViewController: BaseViewController {
         super.viewDidLoad()
         setupView()
         setupBinding()
+        
+        albumImageBackgroundView.applyGradient(colors: [UIColor(red: 0, green: 0, blue: 0, alpha: 0.8).cgColor,
+                                                        UIColor(red: 0, green: 0, blue: 0, alpha: 0.6).cgColor,
+                                                        UIColor(red: 0, green: 0, blue: 0, alpha: 0.3).cgColor])
+        
+        showAlbumContainerView.applyGradient(colors: [UIColor(red: 240/255, green: 163/255, blue: 224/255, alpha: 1).cgColor,
+                                                      UIColor(red: 246/255, green: 197/255, blue: 232/255, alpha: 1).cgColor,
+                                                      UIColor(red: 246/255, green: 220/255, blue: 238/255, alpha: 1).cgColor])
+        showArtistContainerView.applyGradient(colors: [UIColor(red: 68/255, green: 124/255, blue: 195/255, alpha: 1).cgColor,
+                                                       UIColor(red: 155/255, green: 187/255, blue: 235/255, alpha: 1).cgColor,
+                                                       UIColor(red: 182/255, green: 207/255, blue: 255/255, alpha: 1).cgColor])
         // Do any additional setup after loading the view.
     }
     
