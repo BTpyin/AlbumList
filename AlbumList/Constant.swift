@@ -13,6 +13,7 @@ var BASE_URL: URL {
     let url = "https://itunes.apple.com"
     return url.url!
 }
+
 extension StringResource {
     public func string(_ language: String = "") -> String {
         guard let basePath = bundle.path(forResource: "Base", ofType: "lproj"), let baseBundle = Bundle(path: basePath) else {
@@ -54,12 +55,6 @@ var isLanguageEN: Bool {
         return Defaults[\.LANGUAGE] ==  "en"
     }
 }
-
-//var currentLanguage: String {
-//    get {
-//        return Defaults[\.LANGUAGE] ==  "en" ? "en" : "tc"
-//    }
-//}
 
 var currentLanguageIdentifier: String {
     get {

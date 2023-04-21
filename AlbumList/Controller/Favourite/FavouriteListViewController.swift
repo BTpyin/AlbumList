@@ -78,7 +78,7 @@ extension FavouriteListViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.favouriteListTableViewCell, for: indexPath)!
-        cell.viewModel.setupVm(model: viewModel.favouriteAlbumList.value[indexPath.row])
+        cell.setup(album: viewModel.favouriteAlbumList.value[indexPath.row])
         cell.delegate = self
         return cell
     }

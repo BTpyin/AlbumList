@@ -30,9 +30,13 @@ class FavouriteListTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        setupBinding()
         moreButton.setTitle("", for: .normal)
         // Initialization code
+    }
+    
+    func setup(album: Album){
+        viewModel.setupVm(model: album)
+        setupBinding()
     }
 
     func setupBinding() {
